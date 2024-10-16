@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exercise 1</title>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400" style="background-color: lightgreen;"></canvas>
+<script>
+
+var canvas = document.getElementById('myCanvas');
+var ctx = canvas.getContext('2d');
+
+ctx.fillStyle = "yellow";
+// 脸
+ctx.beginPath();
+ctx.arc(200, 200, 100, 0, Math.PI * 2, true);
+ctx.fill();
+// 眼睛
+ctx.fillStyle = "black";
+ctx.beginPath();
+ctx.arc(170, 180, 8, 0, Math.PI * 2, true);
+ctx.fill();
+ctx.beginPath();
+ctx.arc(231, 180, 8, 0, Math.PI * 2, true);
+ctx.fill();
+// 鼻子
+ctx.beginPath();
+ctx.moveTo(200, 210);
+ctx.lineTo(200, 230);
+ctx.lineWidth = 3;
+ctx.stroke();
+// 嘴巴
+ctx.beginPath();
+ctx.arc(200, 230, 40,Math.PI*0.2, Math.PI*0.8, false); // 减小半径到40
+ctx.lineWidth = 2;
+ctx.stroke();
+// 文字
+ctx.fillStyle = "lightpink";
+ctx.font = "25px Arial";
+ctx.fillText("the canvas bright me to life", 50, 380);
+</script>
+</body>
+</html>
